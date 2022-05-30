@@ -1,6 +1,7 @@
 
 
 const Page = require('./page');
+const expectChai = require('chai').expect;
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -29,6 +30,20 @@ class LoginPage extends Page {
         await this.inputUsername.setValue(userName);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
+    }
+
+    async getAlertText() {
+        return super.getAlertText
+    }
+    
+    async message() {
+        await (await this.errorMessage).waitForDisplayed();                
+        await expect(this.errorMessage).toBeExisting();        
+    }
+
+    async validateMessage(message) {
+    let text = await this.getAlertText();
+    expectChai(text).to.equal(message)
     }
 
     /**
