@@ -15,7 +15,12 @@ Feature: Login into bookstore
     Then I should see a <message>
 
     Examples:
-      | userName    | password      | message
-      | ale  | pass| Invalid username or password!
+      | userName    | password      | message      |
+      | ale  | pass| Invalid username or password! |
       
+    Scenario Outline: As a user, I register with a new account
+    Given I am on the login page
+    When I click on the New User button
+    Then I should redirect to the register page
+
 
