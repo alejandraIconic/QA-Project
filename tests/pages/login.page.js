@@ -22,6 +22,10 @@ class LoginPage extends Page {
         return $('#login');
     }
 
+    get lblMessage() {
+        return $('#name');
+    }
+
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -33,6 +37,7 @@ class LoginPage extends Page {
     }
 
     async getAlertText() {
+        await this.lblMessage.setValue(message);
         return super.getAlertText
     }
     
