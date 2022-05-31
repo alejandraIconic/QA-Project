@@ -22,6 +22,10 @@ class LoginPage extends Page {
         return $('#login');
     }
 
+    get btnNewUser() {
+        return $('#newUser');
+    }
+
     get lblMessage() {
         return $('#name');
     }
@@ -34,6 +38,10 @@ class LoginPage extends Page {
         await this.inputUsername.setValue(userName);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
+    }
+
+    async goNewUser() {
+        await this.btnNewUser.click();
     }
 
     async getAlertText() {

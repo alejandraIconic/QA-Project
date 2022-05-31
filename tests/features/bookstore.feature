@@ -19,7 +19,7 @@ Scenario Outline: As a non logged user, I can't add a new book
 
   Scenario Outline: As a user, I want to search an exiting book in the bookstore
     Given I am on the bookstore page
-    When I type on the search box a existing <bookName>
+    When I type on the search box a existing <titleLabel>
     Then I should to see all the books that match with this text
-      | bookName | 
+      | titleLabel | 
       | Learning  | 

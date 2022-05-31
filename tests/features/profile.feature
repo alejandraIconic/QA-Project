@@ -7,15 +7,15 @@
 
   Scenario Outline: As a user, I want to search an exiting book in my profile
     Given I am a logged user on my profile page
-    When I type in the search box a existing <bookName>
+    When I type in the search box a existing <titleLabel>
     Then I should to see all the books that match with this text
-      | bookName | 
+      | titleLabel | 
       | Git  | 
 
   Scenario Outline: As a user, I search a non exiting book in my profile
     Given I am on the profile page
-    When I type in the search box a non existing <bookName>
+    When I type in the search box a non existing <titleLabel>
     Then I should to see No Rows Found message
 
-      | bookName | 
-      | asd  | 
+      | titleLabel | message
+      | asd  | No Rows Found message
