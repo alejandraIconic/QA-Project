@@ -45,13 +45,13 @@ class LoginPage extends Page {
     }
 
     async getAlertText() {
-        await this.lblMessage.setValue(message);
-        return super.getAlertText
+        await this.lblMessage.setValue();
+        return super.getAlertText();
     }
     
-    async message() {
-        await (await this.errorMessage).waitForDisplayed();                
-        await expect(this.errorMessage).toBeExisting();        
+    async ShowMessage() {
+        await (await this.lblMessage).waitForDisplayed();                
+        await expect(this.lblMessage).toBeExisting();  
     }
 
     async validateMessage(message) {
