@@ -1,9 +1,14 @@
   Feature: Logout from bookstore profile
 
-  # Scenario Outline: As a user, I logout from profile
-  #   Given I am a logged user on the profile page
-  #   When I click on the logout button
-  #   Then I should redirect to the login page
+  Scenario Outline: As a user, I logout from profile
+    Given I am on the login page
+    When I login with <userName> and <password>
+    When I click on the logout button
+    Then I should redirect to the login page
+
+    Examples:
+      | userName | password      |
+      | ale      | @Password2021 |
 
   # Scenario Outline: As a user, I want to search an exiting book in my profile
   #   Given I am a logged user on my profile page

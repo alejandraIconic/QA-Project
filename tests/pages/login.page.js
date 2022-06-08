@@ -54,11 +54,6 @@ class LoginPage extends Page {
         await expect(this.lblMessage).toBeExisting();  
     }
 
-    async validateMessage(message) {
-    let text = await this.getAlertText();
-    expectChai(text).to.equal(message)
-    }
-
     /**
      * overwrite specific options to adapt it to page object
      */

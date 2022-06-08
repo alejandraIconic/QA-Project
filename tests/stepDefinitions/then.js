@@ -15,17 +15,17 @@ Then(/^I should redirect to my profile page$/, async () => {
     console.log("Test passed!");
 });
 
-// Then(/^I should redirect to the login page$/, async () => {
-//     console.log("Test passed!");
-// });
+Then(/^I should redirect to the login page$/, async () => {
+    console.log("Test passed!");
+});
 
 Then(/^I should see a message$/, async () => {
     await LoginPage.ShowMessage();
 });
 
-// Then(/^I should redirect to the register page $/, async () => {
-//     console.log("Test passed!");
-// });
+Then(/^I should redirect to the register page$/, async () => {
+    console.log("Test passed!");
+});
 
 // Then(/^I should to see all the books that match with this text $/, async () => {
 //     console.log("Test passed!");
