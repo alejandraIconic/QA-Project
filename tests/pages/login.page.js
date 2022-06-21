@@ -18,12 +18,28 @@ class LoginPage extends Page {
         return $('#password');
     }
 
+    get inputFirstname() {
+        return $('#firstname');
+    }
+
+    get inputLastname() {
+        return $('#lastname');
+    }
+
+    get recaptchaButton() {
+        return $('#recaptcha-anchor > div.recaptcha-checkbox-border');
+    }
+
     get btnSubmit() {
         return $('#login');
     }
 
     get btnNewUser() {
         return $('#newUser');
+    }
+
+    get btnRegister() {
+        return $('#register');
     }
 
     get lblMessage() {
@@ -42,6 +58,32 @@ class LoginPage extends Page {
 
     async goNewUser() {
         await this.btnNewUser.click();
+    }
+
+
+    async fillFirstName(firstname) {
+        await this.inputFirstname.setValue(firstname);
+    }
+
+    async fillLastName(lastname) {
+        await this.inputLastname.setValue(lastname);
+    }
+
+    async fillUserName(userName) {
+        await this.inputUsername.setValue(userName);
+    }
+
+    async fillPassword(password) {
+        await this.inputPassword.setValue(password);
+    }
+
+    async fillRecaptcha(){
+        await this.recaptchaButton.click();
+    }
+
+
+    async register(){
+        await this.btnRegister.click();
     }
 
     async getAlertText() {

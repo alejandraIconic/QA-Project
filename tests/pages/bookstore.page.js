@@ -1,4 +1,5 @@
 const Page = require('./page');
+const expectChai = require('chai').expect;
 
 class BookStorePage extends Page { 
 

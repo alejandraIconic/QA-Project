@@ -11,6 +11,10 @@ const pages = {
     books: BookStorePage
 }
 
+Then(/^I should see a message$/, async () => {
+    await LoginPage.ShowMessage();
+});
+
 Then(/^I should redirect to my profile page$/, async () => {
     console.log("Test passed!");
 });
@@ -19,29 +23,31 @@ Then(/^I should redirect to the login page$/, async () => {
     console.log("Test passed!");
 });
 
-Then(/^I should see a message$/, async () => {
-    await LoginPage.ShowMessage();
-});
-
-Then(/^I should redirect to the register page$/, async () => {
+Then(/^I should redirect to the BookStore page$/, async () => {
     console.log("Test passed!");
 });
+
+Then(/^I should to see all the book information$/, async () => {
+    console.log("Test passed!");
+});
+
+// Then(/^I should redirect to my profile page$/, async () => {
+//     await LoginPage.register();
+// });
+
 
 // Then(/^I should to see all the books that match with this text $/, async () => {
 //     console.log("Test passed!");
 // });
 
+
 // Then(/^I should to see No Rows Found message $/, async () => {
 //     console.log("Test passed!");
 // });
 
-// Then(/^I should to see all the book information $/, async () => {
-//     console.log("Test passed!");
-// });
-
-// Then(/^I should to see an alert (\w+)$/, async (message) => {
-//     console.log("Test passed!");
-// });
+Then(/^I should to see and confirm an alert message$/, async () => {
+    await ProfilePage.acceptAlert();
+});
 
 // Then(/^ I should to see the book added on my profile $/, async () => {
 //     console.log("Test passed!");

@@ -10,26 +10,47 @@ const pages = {
     books: BookStorePage
 }
 
-When(/^I login with (\w+) and (.+)$/, async (userName, password) => {
-    await LoginPage.login(userName, password)
-});
-
-When(/^I click on the logout button$/, async () => {
-    await ProfilePage.logout();
-});
-
 When(/^I login with a correct (\w+) and an incorrect (.+)$/, async (userName, password) => {
     await LoginPage.login(userName, password)
 });
 
-When(/^I click on the New User button$/, async () => {
-    await LoginPage.goNewUser();
+When(/^I login with a incorrect (\w+) and an incorrect (.+)$/, async (userName, password) => {
+    await LoginPage.login(userName, password)
 });
 
-// When(/^I type in the search box a existing (\w+)$/, async (titleLabel) => {
-//     //TODO: function to compare seacrh text with titleName
-//     //await ProfilePage.;
+When(/^I login with (\w+) and (.+)$/, async (userName, password) => {
+    await LoginPage.login(userName, password)
+});
+
+// When(/^I click on the logout button$/, async () => {
+//     await ProfilePage.logout();
 // });
+
+When(/^I click on the Go To Book Store button$/, async () => {
+    await ProfilePage.goToBookstore()
+});
+
+When(/^I click on a book in the bookstore$/, async () => {
+    await ProfilePage.selectBook()
+});
+
+When(/^I click on the Add To Your Collection button$/, async () => {
+    await ProfilePage.addToCollection()
+});
+
+// When(/^I fill correctly the information: {string}, {string}, {string}, {string}$/, async (firstname, lastname, userName, password) => {
+//     await LoginPage.fillFirstName(firstname);
+//     await LoginPage.fillLastName(lastname);
+//     await LoginPage.fillUserName(userName);
+//     await LoginPage.fillPassword(password);
+//     await LoginPage.fillRecaptcha();
+// });
+
+// When(/^I type in the search box a existing (\w+)$/, async (titleLabel) => {
+//     await ProfilePage.searchBook();
+// });
+
+
 
 // When(/^I type in the search box a non existing (\w+)$/, async (titleLabel) => {
 //     //TODO: function to compare seacrh text with titleName
