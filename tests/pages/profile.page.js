@@ -57,17 +57,14 @@ class ProfilePage extends Page {
 
 
     async searchBook(titleLabel) {
+        await (await this.searchBox).waitForDisplayed();
         await this.searchBox.setValue(titleLabel);
     }
-    
+
     async logout() {
         await (await this.btnLogout).waitForDisplayed();
         await (await this.btnLogout).click();
     } 
-
-    async searchBook(titleLabel) {
-        await this.searchBox.setValue(titleLabel);
-    }
 
     async findBook(titleLabel) {
         await this.searchBox.setValue(titleLabel);

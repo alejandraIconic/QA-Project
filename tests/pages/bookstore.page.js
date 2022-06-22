@@ -92,11 +92,26 @@ class BookStorePage extends Page {
         return $('#addNewRecordButton');
     }
 
+    get btnlogin() {
+        return $('#login');
+    }
+
+    get btnProfile() {
+        return $('#item-3');
+    }
+
+    async login() {
+        await this.btnlogin.click();
+    }
+
     async logout() {
         await (await this.btnLogout).waitForDisplayed();
         await (await this.btnLogout).click();
     }  
 
+    async goProfile() {
+        await this.btnProfile.click();
+    }
     async addNewRecord() {
         await (await this.btnAddNewRecord).scrollIntoView();
         await (await this.btnAddNewRecord).click();

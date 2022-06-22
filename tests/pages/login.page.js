@@ -60,7 +60,6 @@ class LoginPage extends Page {
         await this.btnNewUser.click();
     }
 
-
     async fillFirstName(firstname) {
         await this.inputFirstname.setValue(firstname);
     }
@@ -80,7 +79,6 @@ class LoginPage extends Page {
     async fillRecaptcha(){
         await this.recaptchaButton.click();
     }
-
 
     async register(){
         await this.btnRegister.click();

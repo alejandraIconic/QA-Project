@@ -19,24 +19,11 @@ Then(/^I should redirect to my profile page$/, async () => {
     console.log("Test passed!");
 });
 
-Then(/^I should redirect to the login page$/, async () => {
-    console.log("Test passed!");
-});
-
 Then(/^I should redirect to the BookStore page$/, async () => {
     console.log("Test passed!");
 });
 
 Then(/^I should see all the book information$/, async () => {
-    console.log("Test passed!");
-});
-
-// Then(/^I should redirect to my profile page$/, async () => {
-//     await LoginPage.register();
-// });
-
-
-Then(/^I should see all the books that match with this text$/, async () => {
     console.log("Test passed!");
 });
 
@@ -49,23 +36,40 @@ Then(/^I should not see Add To Your Collection button$/, async () => {
     await browser.pause(2000);
 });
 
-Then(/^I click on the logout button$/, async () => {
-    await ProfilePage.logout();
-});
+// Then(/^I click on the logout button$/, async () => {
+//     await ProfilePage.logout();
+// });
 
 Then(/^I return to the bookstore page$/, async () => {
     await BookStorePage.addNewRecord();
 });
+
+Then(/^I should redirect to the login page$/, async () => {
+    console.log("Test passed!");
+});
+
+Then(/^I should see all the books that match with this text$/, async () => {
+    console.log("Test passed!");
+});
+
 // Then(/^Any book should be shown$/, async () => {
 //     console.log("Test passed!");
 // });
 
-// Then(/^I should to see an alert message$/, async () => {
-//     await (await $('#closeSmallModal-ok')).click();
-//     await ProfilePage.acceptAlert();
-//     await browser.pause(3000);
-// });
+Then(/^I should to see an alert message$/, async () => {
+    await (await $('#closeSmallModal-ok')).click();
+    await ProfilePage.acceptAlert();
+    await browser.pause(3000);
+});
 
+
+Then(/^I should redirect to the books page$/, async () => {
+    console.log("Test passed!");
+});
+
+// Then(/^I should redirect to my profile page$/, async () => {
+//     console.log("Test passed!");
+// });
 // Then(/^I should to see all the books that match with this text$/, async () => {
 //     console.log("Test passed!");
 // });
