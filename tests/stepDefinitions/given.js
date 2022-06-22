@@ -15,6 +15,7 @@ Given(/^I am on the (\w+) page$/, async (page) => {
 });
 
 Given(/^I am a logged user on the (\w+) page$/, async (page) => {
+    await browser.pause(3000);
     await pages[page].open()
 });
 

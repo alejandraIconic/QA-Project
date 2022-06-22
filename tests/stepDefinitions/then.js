@@ -27,7 +27,7 @@ Then(/^I should redirect to the BookStore page$/, async () => {
     console.log("Test passed!");
 });
 
-Then(/^I should to see all the book information$/, async () => {
+Then(/^I should see all the book information$/, async () => {
     console.log("Test passed!");
 });
 
@@ -36,18 +36,39 @@ Then(/^I should to see all the book information$/, async () => {
 // });
 
 
-// Then(/^I should to see all the books that match with this text $/, async () => {
-//     console.log("Test passed!");
-// });
+Then(/^I should see all the books that match with this text$/, async () => {
+    console.log("Test passed!");
+});
 
-
-// Then(/^I should to see No Rows Found message $/, async () => {
-//     console.log("Test passed!");
-// });
-
-Then(/^I should to see and confirm an alert message$/, async () => {
+Then(/^I should see and confirm an alert message$/, async () => {
     await ProfilePage.acceptAlert();
 });
+
+Then(/^I should not see Add To Your Collection button$/, async () => {
+    console.log("Test passed!");
+    await browser.pause(2000);
+});
+
+Then(/^I click on the logout button$/, async () => {
+    await ProfilePage.logout();
+});
+
+Then(/^I return to the bookstore page$/, async () => {
+    await BookStorePage.addNewRecord();
+});
+// Then(/^Any book should be shown$/, async () => {
+//     console.log("Test passed!");
+// });
+
+// Then(/^I should to see an alert message$/, async () => {
+//     await (await $('#closeSmallModal-ok')).click();
+//     await ProfilePage.acceptAlert();
+//     await browser.pause(3000);
+// });
+
+// Then(/^I should to see all the books that match with this text$/, async () => {
+//     console.log("Test passed!");
+// });
 
 // Then(/^ I should to see the book added on my profile $/, async () => {
 //     console.log("Test passed!");

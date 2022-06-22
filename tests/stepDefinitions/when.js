@@ -22,10 +22,6 @@ When(/^I login with (\w+) and (.+)$/, async (userName, password) => {
     await LoginPage.login(userName, password)
 });
 
-// When(/^I click on the logout button$/, async () => {
-//     await ProfilePage.logout();
-// });
-
 When(/^I click on the Go To Book Store button$/, async () => {
     await ProfilePage.goToBookstore()
 });
@@ -38,6 +34,27 @@ When(/^I click on the Add To Your Collection button$/, async () => {
     await ProfilePage.addToCollection()
 });
 
+When(/^I type in the search box an existing (\w+)$/, async (titleLabel) => {
+    await browser.pause(2000)
+    await BookStorePage.searchBook(titleLabel)
+    await browser.pause(4000)
+});
+
+// When(/^I have at least an existing book$/, async () => {
+//     await browser.pause(3000)
+//     await ProfilePage.checkBooks(true);
+// });
+
+// When(/^I click on the delete button$/, async () => {
+//     await browser.pause(3000);
+//     await ProfilePage.deleteBooks()
+//     await browser.pause(3000)
+// });
+
+When(/^I type in the search box a existing (\w+)$/, async (titleLabel) => {
+    await ProfilePage.findBook(titleLabel)
+});
+
 // When(/^I fill correctly the information: {string}, {string}, {string}, {string}$/, async (firstname, lastname, userName, password) => {
 //     await LoginPage.fillFirstName(firstname);
 //     await LoginPage.fillLastName(lastname);
@@ -48,13 +65,6 @@ When(/^I click on the Add To Your Collection button$/, async () => {
 
 // When(/^I type in the search box a existing (\w+)$/, async (titleLabel) => {
 //     await ProfilePage.searchBook();
-// });
-
-
-
-// When(/^I type in the search box a non existing (\w+)$/, async (titleLabel) => {
-//     //TODO: function to compare seacrh text with titleName
-//     //await ProfilePage.;
 // });
 
 // When(/^I click on a book in the bookstore$/, async () => {

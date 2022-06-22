@@ -88,10 +88,22 @@ class BookStorePage extends Page {
     }
 
 
+    get btnAddNewRecord(){
+        return $('#addNewRecordButton');
+    }
+
     async logout() {
         await (await this.btnLogout).waitForDisplayed();
         await (await this.btnLogout).click();
     }  
+
+    async addNewRecord() {
+        await (await this.btnAddNewRecord).scrollIntoView();
+        await (await this.btnAddNewRecord).click();
+    }  
+    async searchBook(titleLabel) {
+        await this.searchBox.setValue(titleLabel);
+    }
 
 open() {
     return super.open('books');
