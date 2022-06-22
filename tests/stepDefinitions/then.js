@@ -24,6 +24,7 @@ Then(/^I should redirect to the BookStore page$/, async () => {
 });
 
 Then(/^I should see all the book information$/, async () => {
+    await browser.pause(3000);
     console.log("Test passed!");
 });
 
@@ -56,8 +57,7 @@ Then(/^I should see all the books that match with this text$/, async () => {
 //     console.log("Test passed!");
 // });
 
-Then(/^I should to see an alert message$/, async () => {
-    await (await $('#closeSmallModal-ok')).click();
+Then(/^I should see an alert message$/, async () => {
     await ProfilePage.acceptAlert();
     await browser.pause(3000);
 });

@@ -1,8 +1,6 @@
 
 Feature: Add a book without an account
 
-
-
 # #Search a book without an account
 #     Scenario Outline: As a user, I search an exiting book in the bookstore
 #     Given I am on the books page

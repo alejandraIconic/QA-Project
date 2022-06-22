@@ -100,6 +100,7 @@ class ProfilePage extends Page {
         await this.btnDeleteBooks.waitForDisplayed();
         await (await this.btnDeleteBooks).scrollIntoView();
         await this.btnDeleteBooks.click()
+        await this.deleteModal.click()
     }
 
     // async checkBooks(isBook) {

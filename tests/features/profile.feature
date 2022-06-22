@@ -4,6 +4,10 @@ Scenario Outline: As a logged user, I add a new book to my profile
     Given I am on the login page
     When I login with <userName> and <password>
     Then I should redirect to my profile page
+    When I click on the delete button
+    Then I should see an alert message
+
+#Scenario Outline: Add a new book to my profile
     When I click on the Go To Book Store button
     Then I should redirect to the BookStore page
     When I click on a book in the bookstore
@@ -46,10 +50,6 @@ Scenario Outline: As a non logged user, I add a new book to my profile
 
   Scenario Outline: As a user, I want to search an exiting book in my profile
     Given I am on the books page
-    When I click on the login button
-    Then I should redirect to the login page
-    When I login with <userName> and <password>
-    Then I should redirect to the books page
     When I type in the search box an existing <titleLabel>
     Then I should see all the books that match with this text
     # When I click on the Profile button
